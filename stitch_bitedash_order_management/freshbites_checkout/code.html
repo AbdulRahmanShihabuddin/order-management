@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FreshBites - Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ab3500",
+                        "on-secondary-fixed-variant": "#424658",
+                        "on-surface-variant": "#594139",
+                        "inverse-surface": "#3c2d28",
+                        "on-primary-fixed": "#390c00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f6",
+                        "surface-container-low": "#fff1ed",
+                        "surface-variant": "#f7ddd5",
+                        "tertiary-fixed": "#b5ebff",
+                        "on-secondary-fixed": "#171b2b",
+                        "on-primary-container": "#5f1900",
+                        "on-surface": "#261814",
+                        "tertiary-container": "#00a7cb",
+                        "primary-fixed": "#ffdbd0",
+                        "secondary": "#5a5d70",
+                        "primary-container": "#ff6b35",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d7168",
+                        "inverse-primary": "#ffb59d",
+                        "background": "#fff8f6",
+                        "surface-tint": "#ab3500",
+                        "surface-container-high": "#fde3db",
+                        "on-tertiary-fixed": "#001f28",
+                        "secondary-fixed": "#dee1f8",
+                        "outline-variant": "#e1bfb5",
+                        "secondary-fixed-dim": "#c2c5db",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f7ddd5",
+                        "on-secondary-container": "#606376",
+                        "surface-container": "#ffe9e3",
+                        "on-primary-fixed-variant": "#832600",
+                        "on-background": "#261814",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004e60",
+                        "on-tertiary-container": "#003744",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#dee1f8",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#ffb59d",
+                        "tertiary-fixed-dim": "#59d5fb",
+                        "surface": "#fff8f6",
+                        "tertiary": "#00677e",
+                        "surface-dim": "#eed5cd",
+                        "inverse-on-surface": "#ffede8",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "xxl": "48px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "base": "4px",
+                        "margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-md": ["Inter"],
+                        "h3": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h3": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pt-16 pb-20 md:pb-0">
+<!-- TopNavBar -->
+<header class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-orange-600 dark:text-orange-500 font-inter antialiased fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center px-4 h-16 max-w-screen-xl mx-auto">
+<a class="text-2xl font-black tracking-tighter text-orange-600 dark:text-orange-500" href="#">FreshBites</a>
+<div class="flex items-center gap-4">
+<!-- Search bar omitted for checkout clarity -->
+<button class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 p-2 rounded-full text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+<button class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 p-2 rounded-full text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-slate-200" data-alt="Portrait of a young man smiling, bright lighting, soft background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLhrcPw97mVMufHmqm7hXLks3fpPE0g6Ew6_rafjFNxc9pgkqF8eSH7tp_m-YkfiyqdGAExyJXkfTVLBtsDUwCGXOjmJDLqVRKy0qUvOHDlL2mWm4oJbrQR5n5QYefONsI5FTwT_iUHaj533Kdh8aidOr6AHdl-8_4y_trzEoKaxUFta-jfJ6uZdNA4L7O3IomLSCs-DidY1Rmba5MBkBSGzm4XnxZVOCm1A4LvKbUGlfL5scpWEeRnoCawkrbh8bFQRoxDTSpyAk"/>
+</div>
+</div>
+</header>
+<!-- Main Checkout Canvas -->
+<main class="max-w-screen-xl mx-auto px-gutter md:px-lg py-xl md:py-xxl">
+<div class="mb-lg">
+<h1 class="font-h1 text-h1 text-on-surface">Checkout</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-base">Please complete your details below to place your order.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-lg md:gap-xl">
+<!-- Left Column: Checkout Form -->
+<div class="flex-1 space-y-lg">
+<!-- Delivery Details Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_16px_rgba(45,49,66,0.08)] p-md md:p-lg border border-outline-variant/30">
+<h2 class="font-h3 text-h3 text-on-surface mb-md pb-base border-b border-outline-variant/50">Delivery Details</h2>
+<form class="space-y-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-base" for="fullName">Full Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-lg text-body-lg text-on-surface" id="fullName" type="text" value="John Doe"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-base" for="address">Delivery Address</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-lg text-body-lg text-on-surface" id="address" rows="3">123 Fresh Lane, Culinary District, CA 90210</textarea>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-error mb-base" for="phone">Phone Number</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-error rounded-lg px-sm py-sm focus:outline-none focus:border-error focus:ring-1 focus:ring-error font-body-lg text-body-lg text-on-surface pr-10" id="phone" placeholder="(555) 000-0000" type="tel"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-error" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<p class="font-label-sm text-label-sm text-error mt-base">Phone number is required for delivery driver contact.</p>
+</div>
+</form>
+</div>
+<!-- Payment Method Placeholder Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_16px_rgba(45,49,66,0.08)] p-md md:p-lg border border-outline-variant/30">
+<h2 class="font-h3 text-h3 text-on-surface mb-md pb-base border-b border-outline-variant/50">Payment Method</h2>
+<div class="flex items-center gap-sm p-sm border border-primary rounded-lg bg-primary-fixed/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">credit_card</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Visa ending in 4242</p>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="w-full md:w-[380px] lg:w-[420px] shrink-0">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_rgba(45,49,66,0.12)] p-md md:p-lg border border-outline-variant/30 sticky top-24">
+<h2 class="font-h2 text-h2 text-on-surface mb-md">Order Summary</h2>
+<!-- Cart Items -->
+<div class="space-y-md mb-lg">
+<div class="flex justify-between items-start">
+<div class="flex gap-sm">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center font-label-md text-label-md text-on-surface font-semibold shrink-0">1x</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Spicy Salmon Bowl</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Extra avocado, no onions</p>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface shrink-0">$16.50</p>
+</div>
+<div class="flex justify-between items-start">
+<div class="flex gap-sm">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center font-label-md text-label-md text-on-surface font-semibold shrink-0">2x</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Truffle Fries</p>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface shrink-0">$11.00</p>
+</div>
+</div>
+<!-- Totals -->
+<div class="border-t border-outline-variant/50 pt-md space-y-sm mb-lg">
+<div class="flex justify-between items-center">
+<p class="font-body-md text-body-md text-on-surface-variant">Subtotal</p>
+<p class="font-label-md text-label-md text-on-surface">$27.50</p>
+</div>
+<div class="flex justify-between items-center">
+<p class="font-body-md text-body-md text-on-surface-variant">Delivery Fee</p>
+<p class="font-label-md text-label-md text-on-surface">$2.99</p>
+</div>
+<div class="flex justify-between items-center">
+<p class="font-body-md text-body-md text-on-surface-variant">Taxes</p>
+<p class="font-label-md text-label-md text-on-surface">$2.40</p>
+</div>
+<div class="flex justify-between items-center pt-sm mt-sm border-t border-outline-variant/30">
+<p class="font-h3 text-h3 text-on-surface">Total</p>
+<p class="font-h3 text-h3 text-primary">$32.89</p>
+</div>
+</div>
+<!-- Place Order Action -->
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-sm active:scale-95">
+                        Place Order
+                        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+<p class="font-label-sm text-label-sm text-center text-on-surface-variant mt-sm">By placing your order, you agree to our Terms of Service.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on md and up, visible on mobile as per rules, but suppressed for Checkout flow intent) -->
+<!-- Suppressed navigation shell for Checkout (Linear/Transactional intent) -->
+</body></html>

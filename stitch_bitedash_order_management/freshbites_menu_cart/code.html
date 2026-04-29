@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FreshBites - Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ab3500",
+                        "on-secondary-fixed-variant": "#424658",
+                        "on-surface-variant": "#594139",
+                        "inverse-surface": "#3c2d28",
+                        "on-primary-fixed": "#390c00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f6",
+                        "surface-container-low": "#fff1ed",
+                        "surface-variant": "#f7ddd5",
+                        "tertiary-fixed": "#b5ebff",
+                        "on-secondary-fixed": "#171b2b",
+                        "on-primary-container": "#5f1900",
+                        "on-surface": "#261814",
+                        "tertiary-container": "#00a7cb",
+                        "primary-fixed": "#ffdbd0",
+                        "secondary": "#5a5d70",
+                        "primary-container": "#ff6b35",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d7168",
+                        "inverse-primary": "#ffb59d",
+                        "background": "#fff8f6",
+                        "surface-tint": "#ab3500",
+                        "surface-container-high": "#fde3db",
+                        "on-tertiary-fixed": "#001f28",
+                        "secondary-fixed": "#dee1f8",
+                        "outline-variant": "#e1bfb5",
+                        "secondary-fixed-dim": "#c2c5db",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f7ddd5",
+                        "on-secondary-container": "#606376",
+                        "surface-container": "#ffe9e3",
+                        "on-primary-fixed-variant": "#832600",
+                        "on-background": "#261814",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004e60",
+                        "on-tertiary-container": "#003744",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#dee1f8",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#ffb59d",
+                        "tertiary-fixed-dim": "#59d5fb",
+                        "surface": "#fff8f6",
+                        "tertiary": "#00677e",
+                        "surface-dim": "#eed5cd",
+                        "inverse-on-surface": "#ffede8",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "xxl": "48px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "base": "4px",
+                        "margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-md": ["Inter"],
+                        "h3": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h3": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-lg text-body-lg antialiased min-h-screen flex flex-col pt-16">
+<!-- TopNavBar -->
+<nav class="bg-white/95 backdrop-blur-md font-inter antialiased fixed top-0 w-full z-50 border-b border-slate-100 shadow-sm hidden md:flex h-16">
+<div class="flex justify-between items-center px-4 w-full max-w-screen-xl mx-auto">
+<!-- Logo -->
+<a class="text-2xl font-black tracking-tighter text-orange-600" href="#">FreshBites</a>
+<!-- Search Bar (on right side as per JSON intent, but keeping center structural for balance if needed, moving to right here) -->
+<div class="flex-1 max-w-md mx-auto hidden lg:block">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-full focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-md font-body-md text-slate-700 placeholder-slate-400 transition-colors" placeholder="Search for food..." type="text"/>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors active:scale-95 duration-150 group">
+<span class="material-symbols-outlined group-hover:text-orange-500" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+<span class="absolute top-1 right-1 flex items-center justify-center w-4 h-4 bg-primary text-white text-[10px] font-bold rounded-full border-2 border-white">3</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors active:scale-95 duration-150 group">
+<span class="material-symbols-outlined group-hover:text-orange-500" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="ml-2 w-8 h-8 rounded-full overflow-hidden border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 active:scale-95 duration-150">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Portrait of a smiling young man in a casual setting, well-lit, professional headshot style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeiYP3eKlQEsyFNOdwRGJ3IAMTT2hJO92kYAQSDYVCf_z6swQr5pKzPuXHQ1bA7lm5y6Dq0npd3x8okqa8Z_-MdNUm3-2sLjZig4sipau1T6qDemEuVWzOv8fSCOuBJijIeJy3h9_qDtxhzfm3iATqhUbHpujv7Vg_Jp2UwLwu14l7QM_oErTjE37aXQi9zHhCnwt6Rs1vUpKumigJQO7W5MMcNH6NWGOTfl0ZapOQEDKDpARbNwiE-oNfYr-Y4V0OoawRbEEI3ic"/>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row gap-lg p-margin lg:py-xl">
+<!-- Left Column: Menu Canvas -->
+<div class="flex-1 w-full flex flex-col gap-xl">
+<!-- Category Tabs -->
+<section aria-label="Menu Categories">
+<div class="flex items-center gap-xs overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-4 py-2 rounded-full bg-primary text-white font-label-md text-label-md whitespace-nowrap shadow-sm">All</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Burgers</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Pizza</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Sushi</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Salads</button>
+</div>
+</section>
+<!-- Menu Grid -->
+<section aria-label="Menu Items">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(45,49,66,0.08)] overflow-hidden flex flex-col hover:shadow-[0_8px_24px_rgba(45,49,66,0.12)] transition-shadow duration-300">
+<div class="h-48 w-full relative">
+<img alt="Classic Cheeseburger" class="w-full h-full object-cover" data-alt="Close-up of a juicy double cheeseburger with fresh lettuce, tomato, and melted cheese on a sesame seed bun, dramatic lighting, dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgqYrHW7E29ohk4Yg3PcKXyN7tG2YpTFirm9S7m0-u_5hk6Kvf2xGDi5uSoMTUKts3s2lBVQY1piYMKaki5Vx8K7-F-n2mNbh5bzk_6n4Ympd75YqZ3XbFA2Y9efeL977VG9uJziRTcY4j0H0ZJ74gquS_hNaJ9p_0D58zFTF6NUohskL93MDMJLhUywibfMFg8_1Q0z5smr6teJGzWsWcj6kjAMkWWSaAfq0dB9O3tgrGuVhJ6jpQ9sfTBSzBF4qV4_QrWzTWQbs"/>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-slate-800">4.8</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1 gap-xs">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-h3 text-h3 text-on-surface">Classic Smashburger</h3>
+<span class="font-h3 text-h3 text-primary whitespace-nowrap">$12.99</span>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-2 flex-1">Double beef patty, American cheese, house sauce, pickles, toasted brioche bun.</p>
+<button class="mt-sm w-full py-2 bg-white border border-slate-200 text-slate-800 font-label-md text-label-md rounded-lg hover:bg-slate-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(45,49,66,0.08)] overflow-hidden flex flex-col hover:shadow-[0_8px_24px_rgba(45,49,66,0.12)] transition-shadow duration-300">
+<div class="h-48 w-full relative">
+<img alt="Margherita Pizza" class="w-full h-full object-cover" data-alt="Wood-fired Margherita pizza with fresh basil leaves and melted mozzarella bubbles, rustic wooden table setting, top-down view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDByemb7LrhK7TpUdOTJaMra-dFPWB0scrBb4-0LybwhKfcmOYfcvambtsixrqMcunPCrPMIndSLoxD5ZEDum8GqUVHkpYvAdWEqXqdhwGK-Ue7pRdl7SxSWZwSXBQo1tvsG23zPDP9ZQEwDuXv5JCg9rDNQjMXUxXpdgRRxbWKvVhxDrTl4-0mroHx38xZWbrtz42fMrYG_2MThhiBB5QOKpikA7gLW3dsruThVZk2ZGRYvJ9JM6aS2eWHyB8SeWpqSSzOFsBPToY"/>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-slate-800">4.9</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1 gap-xs">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-h3 text-h3 text-on-surface">Wood-Fired Margherita</h3>
+<span class="font-h3 text-h3 text-primary whitespace-nowrap">$16.50</span>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-2 flex-1">San Marzano tomato sauce, fresh mozzarella, basil, extra virgin olive oil.</p>
+<button class="mt-sm w-full py-2 bg-white border border-slate-200 text-slate-800 font-label-md text-label-md rounded-lg hover:bg-slate-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(45,49,66,0.08)] overflow-hidden flex flex-col hover:shadow-[0_8px_24px_rgba(45,49,66,0.12)] transition-shadow duration-300">
+<div class="h-48 w-full relative">
+<img alt="Crispy Chicken Salad" class="w-full h-full object-cover" data-alt="Vibrant salad bowl with crispy chicken strips, cherry tomatoes, avocado slices, and mixed greens on a white marble counter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVjnP3IZHroaolcB1yKXTv4u9RPFqmQbUpQDWqxTgSZ2VvT4fM1P0WIADSLGNWq_ATpvOTLR9Ou7iqh8mdTOxrACQ7WltLu1PR8QHr79X_Q66_28asXoYgzzps8Eb5kGypgJs6C3zwnfllSqixI1tt640x0o8NajUfY82bloJzYbkMIc4yxQebBLqGlBL6QW0Zg5r9Ct5yfjswJYSGxMReDSQWifNvOlj4UEOLMBcwnMImf32qMs4Yiu6KBevMrHxI85FlVWBEsvY"/>
+<div class="absolute top-sm left-sm bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full shadow-sm">
+<span class="font-label-sm text-label-sm text-green-700 font-semibold">Healthy Choice</span>
+</div>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-slate-800">4.6</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1 gap-xs">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-h3 text-h3 text-on-surface">Crispy Chicken Salad</h3>
+<span class="font-h3 text-h3 text-primary whitespace-nowrap">$14.00</span>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-2 flex-1">Mixed greens, cherry tomatoes, avocado, crispy buttermilk chicken, honey mustard dressing.</p>
+<button class="mt-sm w-full py-2 bg-white border border-slate-200 text-slate-800 font-label-md text-label-md rounded-lg hover:bg-slate-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(45,49,66,0.08)] overflow-hidden flex flex-col hover:shadow-[0_8px_24px_rgba(45,49,66,0.12)] transition-shadow duration-300">
+<div class="h-48 w-full relative">
+<img alt="Sushi Platter" class="w-full h-full object-cover" data-alt="Elegant sushi platter with fresh salmon nigiri, tuna rolls, and bright green wasabi on a dark slate board, moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsih3jFSQ3TBdJX3_iF7feDBLbFIuJWcpb3lMLkiQjKEW0ZdCg0mdVZRbs96F9vmlVc13qAK3F_Ga_tjgKh1LowhVWCc7vtk4lKoQKh3187-CHyvqAEtpQlk-dtlOQ2niN6L5q7igx-6yWiGw00O0DdbYJcvMkcAeUCbaxWLiaaSHxSSCwCWeNIt8ehxsKmZJqIt7gX7eg-AJalRZOEuBh91Q_QKxbaG7-4M5T19Z4liXs2lBwaDI2DehxGcfybAHGcgBaSy9Iiq8"/>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-slate-800">4.9</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1 gap-xs">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-h3 text-h3 text-on-surface">Deluxe Sushi Combo</h3>
+<span class="font-h3 text-h3 text-primary whitespace-nowrap">$22.00</span>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-2 flex-1">Assorted nigiri and sashimi, spicy tuna roll, soy sauce, pickled ginger, wasabi.</p>
+<button class="mt-sm w-full py-2 bg-white border border-slate-200 text-slate-800 font-label-md text-label-md rounded-lg hover:bg-slate-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                                Add to Cart
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar Mini-Cart -->
+<aside class="w-full lg:w-[360px] flex-shrink-0">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_rgba(45,49,66,0.12)] p-lg sticky top-[96px] flex flex-col max-h-[calc(100vh-120px)]">
+<!-- Cart Header -->
+<div class="flex items-center justify-between pb-4 border-b border-slate-100">
+<h2 class="font-h2 text-h2 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined">shopping_bag</span>
+                        Your Order
+                    </h2>
+<span class="bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm px-2 py-1 rounded-full">3 Items</span>
+</div>
+<!-- Cart Items List -->
+<div class="flex-1 overflow-y-auto py-4 flex flex-col gap-4 scrollbar-hide">
+<!-- Cart Item 1 -->
+<div class="flex gap-sm items-start group">
+<img alt="Smashburger thumbnail" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" data-alt="Small thumbnail of a juicy double cheeseburger on a sesame bun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe1hw__7lTiMgZDLg-0-zECV-HEbNoUPmY1Cpl1apW7myHFBjGR9ZMsm4JkPOiT5_Gasu2BgGgCpTQMYHBZPcewLms4U5HexYfMxtV3Jzzhuh57ZUvqpWYN2fFj0PseZO-EuRZkQcqmP75HKCRS8VthHQk-f_E1Hr6qZIPO7TPLVK4kcWV4XDuxtrSXkoJSFNYZUrABTxFh-dITgNKnjtUsVIo_XBDJm53aotBo5RU5vrRJGoTnKXXMLGVHlt0q2vBTQMh5hbUEhU"/>
+<div class="flex-1 flex flex-col min-w-0">
+<div class="flex justify-between items-start gap-1">
+<h4 class="font-label-md text-label-md text-on-surface truncate">Classic Smashburger</h4>
+<span class="font-label-md text-label-md text-on-surface whitespace-nowrap">$12.99</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary truncate">No onions</span>
+<!-- Quantity Selector -->
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center bg-surface-container-highest rounded-lg px-2 py-1">
+<button class="text-secondary hover:text-on-surface transition-colors p-1 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface w-6 text-center">1</span>
+<button class="text-secondary hover:text-on-surface transition-colors p-1 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="text-slate-400 hover:text-error transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex gap-sm items-start group">
+<img alt="Pizza thumbnail" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" data-alt="Small thumbnail of a slice of Margherita pizza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwbJB5Kz5LbVZJ4-xqAkQYegmDn3ppcqIpEGz5N1PfahxAo_TpdQA30W7cQSr73aQ2Vohd9621yRFpX4n5tU57dhUyZgBcUl78n0YgvJrsRS5Do5EJZTD19JseTrLHTYPmqAmxJt_Y2y3ffhJ3qNxNrN07tPiDT6NoAOTJdA-IjINCrI4lofqG8kJTlFGLZvB6MhvyWnRftClPI9oClPeOxnCG3OEvlP6ni0BXcRFJFR8JYLFycAc5aDCjcKLh-Ctq7j8QHP44rZM"/>
+<div class="flex-1 flex flex-col min-w-0">
+<div class="flex justify-between items-start gap-1">
+<h4 class="font-label-md text-label-md text-on-surface truncate">Wood-Fired Margherita</h4>
+<span class="font-label-md text-label-md text-on-surface whitespace-nowrap">$33.00</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary truncate">Extra basil</span>
+<!-- Quantity Selector -->
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center bg-surface-container-highest rounded-lg px-2 py-1">
+<button class="text-secondary hover:text-on-surface transition-colors p-1 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface w-6 text-center">2</span>
+<button class="text-secondary hover:text-on-surface transition-colors p-1 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="text-slate-400 hover:text-error transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Footer & Summary -->
+<div class="pt-4 border-t border-slate-100 flex flex-col gap-sm">
+<div class="flex justify-between items-center text-secondary">
+<span class="font-body-md text-body-md">Subtotal</span>
+<span class="font-label-md text-label-md">$45.99</span>
+</div>
+<div class="flex justify-between items-center text-secondary">
+<span class="font-body-md text-body-md">Delivery Fee</span>
+<span class="font-label-md text-label-md">$3.50</span>
+</div>
+<div class="flex justify-between items-center text-on-surface pt-2">
+<span class="font-h3 text-h3">Total</span>
+<span class="font-h2 text-h2 text-primary">$49.49</span>
+</div>
+<button class="mt-4 w-full bg-primary text-white font-label-md text-label-md py-3 px-4 rounded-xl hover:bg-orange-700 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-sm">
+                        Proceed to Checkout
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</aside>
+</main>
+</body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FreshBites - UI States</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ab3500",
+                        "on-secondary-fixed-variant": "#424658",
+                        "on-surface-variant": "#594139",
+                        "inverse-surface": "#3c2d28",
+                        "on-primary-fixed": "#390c00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f6",
+                        "surface-container-low": "#fff1ed",
+                        "surface-variant": "#f7ddd5",
+                        "tertiary-fixed": "#b5ebff",
+                        "on-secondary-fixed": "#171b2b",
+                        "on-primary-container": "#5f1900",
+                        "on-surface": "#261814",
+                        "tertiary-container": "#00a7cb",
+                        "primary-fixed": "#ffdbd0",
+                        "secondary": "#5a5d70",
+                        "primary-container": "#ff6b35",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d7168",
+                        "inverse-primary": "#ffb59d",
+                        "background": "#fff8f6",
+                        "surface-tint": "#ab3500",
+                        "surface-container-high": "#fde3db",
+                        "on-tertiary-fixed": "#001f28",
+                        "secondary-fixed": "#dee1f8",
+                        "outline-variant": "#e1bfb5",
+                        "secondary-fixed-dim": "#c2c5db",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f7ddd5",
+                        "on-secondary-container": "#606376",
+                        "surface-container": "#ffe9e3",
+                        "on-primary-fixed-variant": "#832600",
+                        "on-background": "#261814",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004e60",
+                        "on-tertiary-container": "#003744",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#dee1f8",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#ffb59d",
+                        "tertiary-fixed-dim": "#59d5fb",
+                        "surface": "#fff8f6",
+                        "tertiary": "#00677e",
+                        "surface-dim": "#eed5cd",
+                        "inverse-on-surface": "#ffede8",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "xxl": "48px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "base": "4px",
+                        "margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-md": ["Inter"],
+                        "h3": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h3": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar (from Shared Components JSON) -->
+<nav class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-orange-600 dark:text-orange-500 font-inter antialiased fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm hidden md:block">
+<div class="flex justify-between items-center px-4 h-16 max-w-screen-xl mx-auto">
+<!-- Brand -->
+<div class="text-2xl font-black tracking-tighter text-orange-600 dark:text-orange-500 cursor-pointer">
+                FreshBites
+            </div>
+<!-- Navigation Links -->
+<div class="hidden md:flex space-x-8">
+<a class="text-orange-600 dark:text-orange-500 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-md" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-md" href="#">Search</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-md" href="#">Orders</a>
+</div>
+<!-- Trailing Actions & Profile -->
+<div class="flex items-center space-x-4">
+<div class="flex space-x-2">
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-orange-600 rounded-full"></span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant cursor-pointer">
+<!-- Profile Placeholder -->
+<div class="w-full h-full bg-surface-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">person</span>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-screen-xl mx-auto px-lg pt-[104px] pb-xxl">
+<!-- API Error Banner State (Checkout Failure) -->
+<div class="mb-lg w-full bg-error-container text-on-error-container rounded-lg p-md shadow-sm border border-[#ffb4ab] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-md">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-error mt-1 sm:mt-0" data-icon="error" style="font-variation-settings: 'FILL' 1;">error</span>
+<div>
+<h3 class="font-label-md text-label-md text-error mb-base">Checkout Failed</h3>
+<p class="font-body-md text-body-md text-on-error-container opacity-90">We were unable to process your payment due to a network timeout. Please verify your connection.</p>
+</div>
+</div>
+<button class="shrink-0 bg-error text-on-error font-label-md text-label-md px-md py-sm rounded-lg hover:bg-[#93000a] transition-colors whitespace-nowrap">
+                Retry Checkout
+            </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left Column: Menu Loading State -->
+<div class="lg:col-span-8">
+<div class="flex items-center justify-between mb-lg">
+<h1 class="font-h2 text-h2 text-on-surface">Menu Items</h1>
+<div class="flex gap-sm">
+<div class="w-24 h-8 bg-surface-variant rounded-full"></div>
+<div class="w-24 h-8 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Skeleton Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
+<!-- Skeleton Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-sm border border-outline-variant flex flex-col h-full">
+<div class="w-full h-40 bg-surface-variant rounded-lg mb-md"></div>
+<div class="h-5 w-3/4 bg-surface-variant rounded mb-xs"></div>
+<div class="h-3 w-full bg-surface-dim rounded mb-base"></div>
+<div class="h-3 w-2/3 bg-surface-dim rounded mb-lg"></div>
+<div class="mt-auto flex justify-between items-center pt-sm border-t border-surface-variant">
+<div class="h-5 w-16 bg-surface-variant rounded"></div>
+<div class="h-8 w-8 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-sm border border-outline-variant flex flex-col h-full">
+<div class="w-full h-40 bg-surface-variant rounded-lg mb-md"></div>
+<div class="h-5 w-2/3 bg-surface-variant rounded mb-xs"></div>
+<div class="h-3 w-full bg-surface-dim rounded mb-base"></div>
+<div class="h-3 w-4/5 bg-surface-dim rounded mb-lg"></div>
+<div class="mt-auto flex justify-between items-center pt-sm border-t border-surface-variant">
+<div class="h-5 w-16 bg-surface-variant rounded"></div>
+<div class="h-8 w-8 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-sm border border-outline-variant flex flex-col h-full">
+<div class="w-full h-40 bg-surface-variant rounded-lg mb-md"></div>
+<div class="h-5 w-4/5 bg-surface-variant rounded mb-xs"></div>
+<div class="h-3 w-full bg-surface-dim rounded mb-base"></div>
+<div class="h-3 w-1/2 bg-surface-dim rounded mb-lg"></div>
+<div class="mt-auto flex justify-between items-center pt-sm border-t border-surface-variant">
+<div class="h-5 w-16 bg-surface-variant rounded"></div>
+<div class="h-8 w-8 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-sm border border-outline-variant flex flex-col h-full">
+<div class="w-full h-40 bg-surface-variant rounded-lg mb-md"></div>
+<div class="h-5 w-3/4 bg-surface-variant rounded mb-xs"></div>
+<div class="h-3 w-full bg-surface-dim rounded mb-base"></div>
+<div class="h-3 w-2/3 bg-surface-dim rounded mb-lg"></div>
+<div class="mt-auto flex justify-between items-center pt-sm border-t border-surface-variant">
+<div class="h-5 w-16 bg-surface-variant rounded"></div>
+<div class="h-8 w-8 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 5 -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-sm border border-outline-variant flex flex-col h-full">
+<div class="w-full h-40 bg-surface-variant rounded-lg mb-md"></div>
+<div class="h-5 w-2/3 bg-surface-variant rounded mb-xs"></div>
+<div class="h-3 w-full bg-surface-dim rounded mb-base"></div>
+<div class="h-3 w-4/5 bg-surface-dim rounded mb-lg"></div>
+<div class="mt-auto flex justify-between items-center pt-sm border-t border-surface-variant">
+<div class="h-5 w-16 bg-surface-variant rounded"></div>
+<div class="h-8 w-8 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Skeleton Card 6 -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-sm border border-outline-variant flex flex-col h-full">
+<div class="w-full h-40 bg-surface-variant rounded-lg mb-md"></div>
+<div class="h-5 w-full bg-surface-variant rounded mb-xs"></div>
+<div class="h-3 w-full bg-surface-dim rounded mb-base"></div>
+<div class="h-3 w-3/4 bg-surface-dim rounded mb-lg"></div>
+<div class="mt-auto flex justify-between items-center pt-sm border-t border-surface-variant">
+<div class="h-5 w-16 bg-surface-variant rounded"></div>
+<div class="h-8 w-8 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Empty Cart State -->
+<div class="lg:col-span-4">
+<div class="sticky top-[104px] bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(45,49,66,0.06)] border border-surface-variant p-lg h-[500px] flex flex-col items-center justify-center text-center">
+<div class="w-24 h-24 bg-surface-variant rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-[48px] text-on-surface-variant opacity-50" data-icon="production_quantity_limits">production_quantity_limits</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-surface mb-xs">Your cart is empty</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl max-w-[250px]">
+                        Looks like you haven't added anything yet. Discover delicious meals to fill it up!
+                    </p>
+<button class="w-full max-w-[200px] bg-primary text-on-primary font-label-md text-label-md px-lg py-3 rounded-lg hover:bg-[#832600] transition-colors shadow-sm">
+                        Start Shopping
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>
