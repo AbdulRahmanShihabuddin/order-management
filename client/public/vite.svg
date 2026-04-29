@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b35" />
+      <stop offset="100%" stop-color="#ab3500" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="200" rx="40" fill="url(#bgGradient)" />
+
+  <!-- Burger / Food Shape with Bite -->
+  <g transform="translate(10, 10)" filter="url(#shadow)">
+    <!-- Top Bun -->
+    <path d="M 50 100 C 50 60, 130 60, 130 100 Z" fill="#ffffff" />
+    
+    <!-- Patty -->
+    <rect x="45" y="105" width="90" height="15" rx="7.5" fill="#5f1900" />
+    
+    <!-- Lettuce -->
+    <path d="M 45 125 Q 60 115, 75 125 T 105 125 T 135 125 L 135 130 L 45 130 Z" fill="#4caf50" />
+    
+    <!-- Bottom Bun -->
+    <path d="M 50 135 C 50 160, 130 160, 130 135 Z" fill="#ffffff" />
+    
+    <!-- Bite mark (a white circle overlapping to look like a bite) -->
+    <!-- We use the background color so it looks like a bite out of the burger -->
+    <circle cx="130" cy="115" r="25" fill="#c33d00" />
+    <!-- Adding a leaf next to the bite -->
+    <path d="M 125 90 C 145 70, 160 85, 145 105 C 125 125, 110 110, 125 90 Z" fill="#4caf50" />
+  </g>
+</svg>

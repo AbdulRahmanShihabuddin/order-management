@@ -16,7 +16,7 @@ function generateOrderId() {
  * Create a new order
  */
 router.post('/', validateOrder, asyncHandler(async (req, res) => {
-  const { customer, items } = req.body;
+  const { customer, items, userId } = req.body;
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const deliveryFee = 2.99;
@@ -44,6 +44,7 @@ router.post('/', validateOrder, asyncHandler(async (req, res) => {
     status: 'received',
     estimatedDelivery: '25-30 mins',
     statusHistory: [{ status: 'received' }],
+    userId,
   };
 
   const order = await Order.create(orderData);
@@ -52,10 +53,12 @@ router.post('/', validateOrder, asyncHandler(async (req, res) => {
 
 /**
  * GET /api/orders
- * List all orders
+ * List all orders, optionally filtered by userId
  */
 router.get('/', asyncHandler(async (req, res) => {
-  const orders = await Order.find().select('-_id -__v').sort({ createdAt: -1 });
+  const { userId } = req.query;
+  const filter = userId ? { userId } : {};
+  const orders = await Order.find(filter).select('-_id -__v').sort({ createdAt: -1 });
   res.json(orders);
 }));
 

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 const navItems = [
   { path: '/', icon: 'home', label: 'Home' },
   { path: '/', icon: 'search', label: 'Search' },
-  { path: '/', icon: 'receipt_long', label: 'Orders', filled: true },
+  { path: '/orders', icon: 'receipt_long', label: 'Orders', filled: true },
   { path: '/', icon: 'person', label: 'Profile' },
 ];
 
@@ -14,7 +14,7 @@ export default function MobileNav() {
     <nav className="fixed bottom-0 w-full z-50 rounded-t-2xl bg-white border-t border-slate-100 shadow-[0_-4px_12px_rgba(45,49,66,0.08)] md:hidden">
       <div className="flex justify-around items-center px-4 pb-safe pt-2 h-20 touch-none select-none">
         {navItems.map((item) => {
-          const isActive = item.label === 'Home' && location.pathname === '/';
+          const isActive = location.pathname === item.path;
           return (
             <Link
               key={item.label}

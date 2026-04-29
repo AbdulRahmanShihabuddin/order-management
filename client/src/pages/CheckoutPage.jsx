@@ -9,9 +9,11 @@ import { useCart, useCartDispatch } from '../context/CartContext';
 import { calculateSubtotal, calculateTax, calculateTotal, DELIVERY_FEE } from '../utils/calculations';
 import { createOrder } from '../services/api';
 import { validateCheckoutForm, hasErrors } from '../utils/validation';
+import { useAuth } from '../context/AuthContext';
 
 export default function CheckoutPage() {
   const { items } = useCart();
+  const { user } = useAuth();
   const dispatch = useCartDispatch();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,6 +32,7 @@ export default function CheckoutPage() {
     try {
       const order = await createOrder({
         customer: customerData,
+        userId: user?.userId,
         items: items.map((i) => ({
           menuItemId: i.menuItemId,
           name: i.name,

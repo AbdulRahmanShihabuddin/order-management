@@ -1,9 +1,12 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import { getItemCount } from '../utils/calculations';
 
 export default function AppHeader({ searchQuery, onSearchChange, showSearch = true }) {
   const { items } = useCart();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const itemCount = getItemCount(items);
   const location = useLocation();
 
@@ -19,18 +22,18 @@ export default function AppHeader({ searchQuery, onSearchChange, showSearch = tr
         <nav className="hidden md:flex gap-6 items-center">
           <Link
             to="/"
-            className={`font-label-md text-label-md transition-colors ${
-              location.pathname === '/' ? 'text-primary font-semibold' : 'text-slate-600 hover:text-primary'
-            }`}
+            className={`font-label-md text-label-md transition-colors ${location.pathname === '/' ? 'text-primary font-semibold' : 'text-slate-600 hover:text-primary'
+              }`}
           >
             Home
           </Link>
-          <span className="text-slate-600 font-label-md text-label-md hover:text-primary transition-colors cursor-pointer">
-            Search
-          </span>
-          <span className="text-slate-600 font-label-md text-label-md hover:text-primary transition-colors cursor-pointer">
+          <Link
+            to="/orders"
+            className={`font-label-md text-label-md transition-colors ${location.pathname === '/orders' ? 'text-primary font-semibold' : 'text-slate-600 hover:text-primary'
+              }`}
+          >
             Orders
-          </span>
+          </Link>
         </nav>
 
         {/* Search Bar */}
@@ -71,11 +74,19 @@ export default function AppHeader({ searchQuery, onSearchChange, showSearch = tr
               notifications
             </span>
           </button>
-          <div className="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant cursor-pointer">
-            <div className="w-full h-full bg-surface-dim flex items-center justify-center">
-              <span className="material-symbols-outlined text-on-surface-variant text-sm">person</span>
-            </div>
-          </div>
+
+          {user && (
+            <button
+              onClick={() => {
+                logout();
+                navigate('/login');
+              }}
+              className="ml-2 flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-slate-600 hover:text-error hover:bg-error-container/50 rounded-lg transition-colors border border-outline-variant/30"
+            >
+              <span className="material-symbols-outlined text-[18px]">logout</span>
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </header>

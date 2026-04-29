@@ -36,6 +36,15 @@ export async function fetchOrder(orderId) {
 }
 
 /**
+ * Fetch all orders for a specific user
+ */
+export async function fetchUserOrders(userId) {
+  const res = await fetch(`${API_BASE}/orders?userId=${userId}`);
+  if (!res.ok) throw new Error('Failed to fetch orders');
+  return res.json();
+}
+
+/**
  * Update order status
  */
 export async function updateOrderStatus(orderId, status) {
