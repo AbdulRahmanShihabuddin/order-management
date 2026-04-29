@@ -14,7 +14,7 @@ export default function TrackingPage() {
     return (
       <>
         <AppHeader showSearch={false} />
-        <main className="max-w-screen-xl mx-auto px-4 md:px-lg py-xl pt-20">
+        <main className="max-w-screen-xl mx-auto px-4 md:px-lg pb-xl pt-[104px]">
           <div className="animate-pulse space-y-lg">
             <div className="h-8 w-64 bg-surface-variant rounded" />
             <div className="h-4 w-48 bg-surface-dim rounded" />
@@ -29,7 +29,7 @@ export default function TrackingPage() {
     return (
       <>
         <AppHeader showSearch={false} />
-        <main className="max-w-screen-xl mx-auto px-4 md:px-lg py-xl pt-20">
+        <main className="max-w-screen-xl mx-auto px-4 md:px-lg pb-xl pt-[104px]">
           <ErrorBanner title="Order not found" message={error || 'Unable to load order details.'} actionLabel="Retry" onAction={refetch} />
         </main>
       </>
@@ -41,7 +41,7 @@ export default function TrackingPage() {
   return (
     <>
       <AppHeader showSearch={false} />
-      <main className="max-w-screen-xl mx-auto px-4 md:px-lg py-xl pt-20">
+      <main className="max-w-screen-xl mx-auto px-4 md:px-lg pb-xl pt-[104px]">
         {/* Header */}
         <div className="mb-lg">
           <div className="flex items-center gap-2 mb-xs">

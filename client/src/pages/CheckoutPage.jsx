@@ -51,7 +51,7 @@ export default function CheckoutPage() {
     return (
       <>
         <AppHeader showSearch={false} />
-        <main className="max-w-screen-xl mx-auto px-gutter md:px-lg py-xl md:py-xxl pt-20">
+        <main className="max-w-screen-xl mx-auto px-gutter md:px-lg pb-xl md:pb-xxl pt-[104px]">
           <EmptyState
             icon="shopping_cart"
             title="Your cart is empty"
@@ -67,7 +67,7 @@ export default function CheckoutPage() {
   return (
     <>
       <AppHeader showSearch={false} />
-      <main className="max-w-screen-xl mx-auto px-gutter md:px-lg py-xl md:py-xxl pt-20">
+      <main className="max-w-screen-xl mx-auto px-gutter md:px-lg pb-xl md:pb-xxl pt-[104px]">
         {apiError && (
           <ErrorBanner
             title="Checkout Failed"

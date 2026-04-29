@@ -28,7 +28,7 @@ export default function MenuPage() {
   return (
     <>
       <AppHeader searchQuery={searchQuery} onSearchChange={setSearchQuery} showSearch />
-      <main className="flex-1 max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row gap-lg p-margin lg:py-xl pt-20">
+      <main className="flex-1 max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row gap-lg p-margin lg:px-0 lg:pb-xl pt-[104px] lg:pt-[104px]">
         {/* Left Column: Menu */}
         <div className="flex-1 w-full flex flex-col gap-xl">
           {error && (

@@ -5,7 +5,6 @@ const connectDB = require('./config/db');
 const menuRoutes = require('./routes/menu');
 const orderRoutes = require('./routes/orders');
 const MenuItem = require('./models/MenuItem');
-const menuSeed = require('./data/menuSeed');
 
 const app = express();
 
@@ -41,16 +40,6 @@ if (require.main === module) {
   const PORT = process.env.PORT || 3001;
   app.listen(PORT, async () => {
     console.log(`FreshBites API running on http://localhost:${PORT}`);
-    try {
-      // Seed data if empty
-      const count = await MenuItem.countDocuments();
-      if (count === 0) {
-        await MenuItem.insertMany(menuSeed);
-        console.log('Seeded database with initial menu items');
-      }
-    } catch (error) {
-      console.error('Error seeding database:', error);
-    }
   });
 }
 
